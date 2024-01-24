@@ -1,8 +1,7 @@
 const PositionSchema = require('../models/position.model');
-const authenticate = require('../middlewares/authMiddleware');
 
 // Read All
-module.exports.FindAllPosition =  authenticate,async (req, res) => {
+module.exports.FindAllPosition = async (req, res) => {
   try {
     const allPositions = await PositionSchema.find();
     res.status(200).json(allPositions);
@@ -13,13 +12,13 @@ module.exports.FindAllPosition =  authenticate,async (req, res) => {
 };
 
 // Create
-module.exports.createNewPosition =  authenticate,async (req, res) => {
+module.exports.createNewPosition = async (req, res) => {
   try {
     const { Name, Description, Skills } = req.body;
 
     // Validate Skills against the enum values
     const validSkills = ['Skill1', 'Skill2', 'Skill3', 'Skill4', 'Skill5', 'Skill6', 'Skill7'];
-    if (!validSkills.includes(Skills)) {
+    if (!Skills.every((skill) => validSkills.includes(skill))) {
       return res.status(400).json({ message: 'Invalid skill selected' });
     }
 
@@ -41,7 +40,7 @@ module.exports.createNewPosition =  authenticate,async (req, res) => {
 };
 
 // Read One
-module.exports.FindOneSinglePosition =  authenticate,(req, res) => {
+module.exports.FindOneSinglePosition = (req, res) => {
   PositionSchema.findOne({ _id: req.params.PositionId })
     .then(oneSinglePosition => {
       res.json(oneSinglePosition);
@@ -52,7 +51,7 @@ module.exports.FindOneSinglePosition =  authenticate,(req, res) => {
 };
 
 // DELETE
-module.exports.deleteAnExistingPosition =  authenticate,(req, res) => {
+module.exports.deleteAnExistingPosition = (req, res) => {
   PositionSchema.deleteOne({ _id: req.params.PositionId })
     .then(result => {
       res.json(result);
@@ -63,7 +62,7 @@ module.exports.deleteAnExistingPosition =  authenticate,(req, res) => {
 };
 
 // UPDATE
-module.exports.updateExistingPosition =  authenticate,(req, res) => {
+module.exports.updateExistingPosition = (req, res) => {
   console.log(req.body);
   PositionSchema.findOneAndUpdate({ _id: req.params.PositionId }, req.body, { new: true, runValidators: true })
     .then(result => {
