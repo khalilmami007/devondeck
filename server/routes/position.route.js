@@ -1,6 +1,18 @@
-const poscontroller=require('../controllers/position.controller');
+const poscontroller = require('../controllers/position.controller');
 
+module.exports = (app) => {
+  // Read All Positions
+  app.get('/positions', poscontroller.FindAllPosition);
 
-module.exports= (app)=>{
-    
-}
+  // Create a New Position
+  app.post('/positions', poscontroller.createNewPosition);
+
+  // Read One Position
+  app.get('/positions/:positionId', poscontroller.FindOneSinglePosition);
+
+  // Delete an Existing Position
+  app.delete('/positions/:positionId', poscontroller.deleteAnExistingPosition);
+
+  // Update an Existing Position
+  app.put('/positions/:positionId', poscontroller.updateExistingPosition);
+};

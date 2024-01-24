@@ -12,7 +12,9 @@ require("./config/mongoose.config")
 const port = process.env.PORT
 
 const Routes = require("./routes/auth.route")
+const positionroute= require("./routes/position.route")
 Routes(app)
+positionroute(app);
 
 
 app.listen(port, () => {
