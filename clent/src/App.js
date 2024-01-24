@@ -4,6 +4,7 @@ import Register from "./components/Register";
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
 import Newposiotion from './components/Newposition'
+import PositionDetails from './components/PositionDetails'
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path='/orgs/Dashboard' element={<Dashboard />} />
         <Route path='/orgs/Login' element={<Login />} />
         <Route path='/orgs/jobs/new' element={<Newposiotion/> } />
+        <Route path="/orgs/jobs/:positionId" element={<PositionDetails />} />
 
 
       </Routes>
