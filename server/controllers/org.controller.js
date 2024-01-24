@@ -78,7 +78,7 @@ exports.login = async (req, res) => {
       }
   
       // Generate a token
-      const token = jwt.sign({ orgId: org._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+      const token = jwt.sign({ orgId: org._id }, process.env.JWT_SECRET, { expiresIn: '3h' });
   
       res.status(200).json({ token });
     } catch (error) {
@@ -86,3 +86,15 @@ exports.login = async (req, res) => {
       res.status(500).json({ message: 'Internal Server Error' });
     }
   };
+
+
+  //login out
+  exports.logout = (req, res) => {
+    try {
+      res.status(200).json({ message: 'Logout successful' });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Internal Server Error' });
+    }
+  };
+  

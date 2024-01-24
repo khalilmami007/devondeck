@@ -5,5 +5,10 @@ module.exports = (app) => {
     app.post('/register', orgcontroller.register);
     
     // Login route
-    app.post('/login', orgcontroller.login)
+    app.post('/login', orgcontroller.login);
+
+    //logout route
+    app.post('/logout', orgcontroller.logout);
+
+
 }
