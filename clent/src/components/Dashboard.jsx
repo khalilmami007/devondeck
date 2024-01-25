@@ -31,15 +31,29 @@ const Dashboard = () => {
     navigate('/orgs/jobs/new');
   };
 
-  return (
-    <div>
-      <button onClick={handleLogout}>Logout</button>
-      <button onClick={handleListNewPosition}>List a new position</button>
+  const handlePositionClick = (position) => {
+    // Navigate to the dynamic route with position details as route state
+    navigate(`/orgs/jobs/${position._id}`, { state: { positionName: position.Name } });
+  };
 
-      <h2>Positions:</h2>
-      <ul>
+  return (
+    <div className="container mt-5">
+      <button className="btn btn-danger" onClick={handleLogout}>
+        Logout
+      </button>
+      <button className="btn btn-primary ml-2" onClick={handleListNewPosition}>
+        List a new position
+      </button>
+
+      <h2 className="mt-3">Positions:</h2>
+      <ul className="list-group">
         {positions.map((position) => (
-          <li key={position._id}>{position.Name}</li>
+          <li key={position._id} className="list-group-item">
+            {/* Use onClick to handle position click */}
+            <span className="text-primary" onClick={() => handlePositionClick(position)}>
+              {position.Name}
+            </span>
+          </li>
         ))}
       </ul>
     </div>

@@ -40,7 +40,13 @@ const Login = () => {
 
   return (
     <div>
-      <h2>Login as an Organization</h2>
+      <div>
+        <h1>DevOnDeck</h1>
+        <h5>Dev registration</h5>
+        <h5>Org registration</h5>
+      </div>
+      <h2>Welcome Back </h2>
+      <h4>Let's find you some condidates!</h4>
 
       <form onSubmit={handleSubmit}>
         <label>

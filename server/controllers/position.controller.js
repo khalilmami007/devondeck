@@ -17,7 +17,7 @@ module.exports.createNewPosition = async (req, res) => {
     const { Name, Description, Skills } = req.body;
 
     // Validate Skills against the enum values
-    const validSkills = ['Skill1', 'Skill2', 'Skill3', 'Skill4', 'Skill5', 'Skill6', 'Skill7'];
+    const validSkills = ['Python', 'JavaScript', 'C#', 'C++', 'Flask', 'SQL', 'Ruby','Django'];
     if (!Skills.every((skill) => validSkills.includes(skill))) {
       return res.status(400).json({ message: 'Invalid skill selected' });
     }

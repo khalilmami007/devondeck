@@ -81,7 +81,7 @@ const Newposition = () => {
         </label>
         <label>
           Skills:
-          {['Skill1', 'Skill2', 'Skill3', 'Skill4', 'Skill5', 'Skill6', 'Skill7'].map((skill) => (
+          {['Python', 'JavaScript', 'C#', 'C++', 'Flask', 'SQL', 'Ruby','Django'].map((skill) => (
             <label key={skill}>
               <input
                 type="checkbox"

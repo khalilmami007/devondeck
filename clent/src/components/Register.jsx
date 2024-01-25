@@ -74,8 +74,14 @@ const RegistrationForm = () => {
   };
 
   return (
+    <div>
+      <div>
+        <h1>DevOnDeck</h1>
+        <h5>Dev Login</h5>
+        <h5>Org Login</h5>
+      </div>
     <form onSubmit={handleSubmit}>
-      <h2>Register as an Organization</h2>
+      <h2>Organization Sign Up</h2>
 
       <label>
         Organization Name:
@@ -134,6 +140,7 @@ const RegistrationForm = () => {
       <button type="submit">Register</button>
       <p>Need to sign up as a developer??</p>
     </form>
+    </div>
   );
 };
 

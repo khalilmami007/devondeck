@@ -11,7 +11,7 @@ const position = new mongoose.Schema({
   },
   Skills: {
     type: [String], // Change to an array of strings
-    enum: ['Skill1', 'Skill2', 'Skill3', 'Skill4', 'Skill5', 'Skill6', 'Skill7'],
+    enum: ['Python', 'JavaScript', 'C#', 'C++', 'Flask', 'SQL', 'Ruby','Django'],
   },
 }, { timestamps: true });
 
