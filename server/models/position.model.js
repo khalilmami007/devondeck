@@ -10,8 +10,8 @@ const position = new mongoose.Schema({
     required: [true, "the Description is required "],
   },
   Skills: {
-    type: [String], // Change to an array of strings
-    enum: ['Python', 'JavaScript', 'C#', 'C++', 'Flask', 'SQL', 'Ruby','Django'],
+    type: Array, 
+    
   },
 }, { timestamps: true });
 

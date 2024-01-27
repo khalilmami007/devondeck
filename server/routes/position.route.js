@@ -5,7 +5,7 @@ module.exports = (app) => {
   app.get('/positions', poscontroller.FindAllPosition);
 
   // Create a New Position
-  app.post('/positions', poscontroller.createNewPosition);
+  app.post('/positions', poscontroller.createPosition);
 
   // Read One Position
   app.get('/positions/:positionId', poscontroller.FindOneSinglePosition);

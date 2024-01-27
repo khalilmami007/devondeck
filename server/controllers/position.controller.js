@@ -12,31 +12,23 @@ module.exports.FindAllPosition = async (req, res) => {
 };
 
 // Create
-module.exports.createNewPosition = async (req, res) => {
-  try {
-    const { Name, Description, Skills } = req.body;
-
-    // Validate Skills against the enum values
-    const validSkills = ['Python', 'JavaScript', 'C#', 'C++', 'Flask', 'SQL', 'Ruby','Django'];
-    if (!Skills.every((skill) => validSkills.includes(skill))) {
-      return res.status(400).json({ message: 'Invalid skill selected' });
-    }
-
-    // Create a new position
-    const newPosition = new PositionSchema({
-      Name,
-      Description,
-      Skills,
+module.exports.createPosition = (req, res) => {
+  PositionSchema.create(req.body)
+    .then(newPosition => {
+      res.status(201).json({ message: 'Position created successfully', position: newPosition });
+    })
+    .catch(err => {
+      if (err.name === 'ValidationError') {
+        // Handle validation errors
+        const validationErrors = {};
+        for (const field in err.errors) {
+          validationErrors[field] = err.errors[field].message;
+        }
+        return res.status(400).json({ error: 'Validation failed', validationErrors });
+      }
+      console.error(err);
+      res.status(500).json({ error: 'Internal Server Error' });
     });
-
-    // Save the position to the database
-    const savedPosition = await newPosition.save();
-
-    res.status(201).json({ message: 'Position created successfully', position: savedPosition });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Internal Server Error' });
-  }
 };
 
 // Read One

@@ -38,12 +38,18 @@ const Dashboard = () => {
 
   return (
     <div className="container mt-5">
-      <button className="btn btn-danger" onClick={handleLogout}>
-        Logout
-      </button>
-      <button className="btn btn-primary ml-2" onClick={handleListNewPosition}>
-        List a new position
-      </button>
+      <div className="d-flex justify-content-between align-items-center">
+        <div>
+          <button className="btn btn-danger" onClick={handleLogout}>
+            Logout
+          </button>
+        </div>
+        <div>
+          <button className="btn btn-primary" onClick={handleListNewPosition}>
+            List a new position
+          </button>
+        </div>
+      </div>
 
       <h2 className="mt-3">Positions:</h2>
       <ul className="list-group">
