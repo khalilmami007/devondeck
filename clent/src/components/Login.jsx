@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import LogHeader from './LogHeader';
+
 
 const Login = () => {
   const navigate = useNavigate();
@@ -41,9 +43,7 @@ const Login = () => {
   return (
     <div>
       <div>
-        <h1>DevOnDeck</h1>
-        <h5>Dev registration</h5>
-        <h5>Org registration</h5>
+      < LogHeader/>
       </div>
       <h2>Welcome Back </h2>
       <h4>Let's find you some condidates!</h4>

@@ -1,0 +1,111 @@
+.main{
+    width: 900px;
+    margin: 20px  auto;
+    font-family: "Calibri"
+}
+.header{
+    width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    border: none;
+}
+.subheader{
+    width: 900px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+   background-color: rgb(224,224,224);
+   font-weight: bold;
+
+}
+.subheader2{
+    width: 900px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+
+}
+.langContainer{
+    width: 475px;
+    height: 70px;
+    border: 2px solid grey;
+}
+.divbar{
+    width: 400px;
+    height: 30px;
+    align-items: center;
+}
+.iconcontainer{
+    width: 350px;
+    height: 225px;
+    border: 2px solid grey;
+    padding: 10px;
+    margin: 10px;
+    overflow: scroll;
+}
+.iconStyle{
+    width: 80px;
+}
+.iconStyle2{
+    width: 60px;
+}
+.langContainer{
+    display: flex;
+    align-items: center;
+    justify-content:left;
+    width: 310px;
+  
+}
+.contStyle{
+    width: 900px;
+    height: 500px;
+    
+}
+
+.ColStyle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    padding: 10px;
+}
+.btncont
+{
+    width: 900px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content:right;
+    padding: 10px;
+
+}
+button{
+    width: 300px;
+    height: 30px;
+    margin: 10px;
+border-radius: 10%;
+border: 1px solid grey;
+background-color: rgb(13,110,253);
+}
+.skipbtn{
+    background-color:  rgb(224,224,224);
+}
+.prfBtn{
+    width: 200px;
+}
+.LogContainer{
+    margin: auto;
+    padding: 10px;
+    width: 600px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}

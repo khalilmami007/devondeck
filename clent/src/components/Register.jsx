@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate,Link } from 'react-router-dom';
+import LogHeader from './LogHeader';
 const RegistrationForm = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -76,9 +76,7 @@ const RegistrationForm = () => {
   return (
     <div>
       <div>
-        <h1>DevOnDeck</h1>
-        <h5>Dev Login</h5>
-        <h5>Org Login</h5>
+      < LogHeader/>
       </div>
     <form onSubmit={handleSubmit}>
       <h2>Organization Sign Up</h2>
@@ -138,7 +136,7 @@ const RegistrationForm = () => {
       </label>
 
       <button type="submit">Register</button>
-      <p>Need to sign up as a developer??</p>
+      <Link to="/"> Need to sign up an Devolepper?</Link>
     </form>
     </div>
   );
