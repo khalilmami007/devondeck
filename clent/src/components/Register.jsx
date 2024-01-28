@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate,Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import LogHeader from './LogHeader';
 const RegistrationForm = () => {
   const navigate = useNavigate();
@@ -47,7 +47,7 @@ const RegistrationForm = () => {
       // Make a POST request to your backend for registration
       await axios.post('http://localhost:5000/register', formData);
       console.log('Registration successful!');
-      
+
       // Redirect to /orgs/login after successful registration
       navigate('/orgs/Login');
     } catch (error) {
@@ -76,68 +76,68 @@ const RegistrationForm = () => {
   return (
     <div>
       <div>
-      < LogHeader/>
+        < LogHeader />
       </div>
-    <form onSubmit={handleSubmit}>
-      <h2>Organization Sign Up</h2>
+      <form onSubmit={handleSubmit}>
+        <h2>Organization Sign Up</h2>
 
-      <label>
-        Organization Name:
-        <input type="text" name="orgname" value={formData.orgname} onChange={handleChange} />
-        <p style={{ color: 'red' }}>{formErrors.orgname}</p>
-      </label>
+        <label>
+          Organization Name:
+          <input type="text" name="orgname" value={formData.orgname} onChange={handleChange} />
+          <p style={{ color: 'red' }}>{formErrors.orgname}</p>
+        </label>
 
-      <label>
-        First Name:
-        <input type="text" name="firstname" value={formData.firstname} onChange={handleChange} />
-        <p style={{ color: 'red' }}>{formErrors.firstname}</p>
-      </label>
+        <label>
+          First Name:
+          <input type="text" name="firstname" value={formData.firstname} onChange={handleChange} />
+          <p style={{ color: 'red' }}>{formErrors.firstname}</p>
+        </label>
 
-      <label>
-        Last Name:
-        <input type="text" name="lastname" value={formData.lastname} onChange={handleChange} />
-        <p style={{ color: 'red' }}>{formErrors.lastname}</p>
-      </label>
+        <label>
+          Last Name:
+          <input type="text" name="lastname" value={formData.lastname} onChange={handleChange} />
+          <p style={{ color: 'red' }}>{formErrors.lastname}</p>
+        </label>
 
-      <label>
-        Contact Email:
-        <input type="text" name="contactemail" value={formData.contactemail} onChange={handleChange} />
-        <p style={{ color: 'red' }}>{formErrors.contactemail}</p>
-      </label>
+        <label>
+          Contact Email:
+          <input type="text" name="contactemail" value={formData.contactemail} onChange={handleChange} />
+          <p style={{ color: 'red' }}>{formErrors.contactemail}</p>
+        </label>
 
-      <label>
-        Organization Address:
-        <input type="text" name="orgadress" value={formData.orgadress} onChange={handleChange} />
-        <p style={{ color: 'red' }}>{formErrors.orgadress}</p>
-      </label>
+        <label>
+          Organization Address:
+          <input type="text" name="orgadress" value={formData.orgadress} onChange={handleChange} />
+          <p style={{ color: 'red' }}>{formErrors.orgadress}</p>
+        </label>
 
-      <label>
-        Organization City:
-        <input type="text" name="orgcity" value={formData.orgcity} onChange={handleChange} />
-        <p style={{ color: 'red' }}>{formErrors.orgcity}</p>
-      </label>
+        <label>
+          Organization City:
+          <input type="text" name="orgcity" value={formData.orgcity} onChange={handleChange} />
+          <p style={{ color: 'red' }}>{formErrors.orgcity}</p>
+        </label>
 
-      <label>
-        Organization State:
-        <input type="text" name="orgstate" value={formData.orgstate} onChange={handleChange} />
-        <p style={{ color: 'red' }}>{formErrors.orgstate}</p>
-      </label>
+        <label>
+          Organization State:
+          <input type="text" name="orgstate" value={formData.orgstate} onChange={handleChange} />
+          <p style={{ color: 'red' }}>{formErrors.orgstate}</p>
+        </label>
 
-      <label>
-        Password:
-        <input type="password" name="password" value={formData.password} onChange={handleChange} />
-        <p style={{ color: 'red' }}>{formErrors.password}</p>
-      </label>
+        <label>
+          Password:
+          <input type="password" name="password" value={formData.password} onChange={handleChange} />
+          <p style={{ color: 'red' }}>{formErrors.password}</p>
+        </label>
 
-      <label>
-        Confirm Password:
-        <input type="password" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} />
-        <p style={{ color: 'red' }}>{formErrors.confirmPassword}</p>
-      </label>
+        <label>
+          Confirm Password:
+          <input type="password" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} />
+          <p style={{ color: 'red' }}>{formErrors.confirmPassword}</p>
+        </label>
 
-      <button type="submit">Register</button>
-      <Link to="/"> Need to sign up an Devolepper?</Link>
-    </form>
+        <button type="submit">Register</button>
+        <Link to="/"> Need to sign up an Devolepper?</Link>
+      </form>
     </div>
   );
 };

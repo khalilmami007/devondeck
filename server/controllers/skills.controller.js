@@ -10,12 +10,12 @@ module.exports.createNewSkill=(req,res)=>{
 
 module.exports.getAllSkills = (request, response) => {
     Skill.find({})
-        .then(Skills => {
-            response.json(Skills);
-        })
-        .catch(err => {
-            response.json(err)
-        })
+    .then(Skills => {
+        response.json(Skills);
+    })
+    .catch(err => {
+        response.json(err);
+    });
 }
 
 module.exports.getOneSkill=(request,response)=>{

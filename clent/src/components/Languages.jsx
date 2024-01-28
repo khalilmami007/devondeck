@@ -34,6 +34,7 @@ const [dev, setDev] = useState({})
 console.log(lang1)
    const AddSkills = (e) => {
        e.preventDefault();
+       console.log(" eroor",props);
        axios.post('http://localhost:5000/api/skills/languages', {devId:props.devId,languages:languages,bio:bio})
                 .then(res=>{console.log(res)
                     console.log(res.data)

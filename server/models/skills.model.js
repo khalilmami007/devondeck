@@ -13,7 +13,10 @@ const SkillSchema=new mongoose.Schema({
         type: String
     },
     devId: {
-        type: String
+         
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Developer' // Reference to the Developer model
+        ,
       },
 }, { timestamps: true })
 

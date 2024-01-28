@@ -82,7 +82,6 @@ const Newposition = () => {
     { skill: 'swift', icon: swiftImage },
     { skill: 'php', icon: phpImage },
     { skill: 'cpp', icon: cppImage },
-    // Add more skills as needed
   ];
 
   return (

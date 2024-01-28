@@ -14,19 +14,21 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './components/style.css';
 
-function App() {const [devId,setDevId]=useState("")
+
+function App() {
+  const [devId, setDevId] = useState("")
   return (
     <div className="App">
       <Routes>
-      <Route element={<DevRegister setDevId={setDevId}/>} path="/" default /> 
-            <Route element={<Languages devId={devId} />} path="/devs/skills/languages"  /> 
-            <Route element={<Frameworks devId={devId}/>} path="/devs/skills/frameworks/:id"  /> 
-            <Route element={<DevLogin/>} path="/devs/login"  /> 
-            <Route element={<AvailabeJobs/>} path="/devs/jobs"  /> 
+        <Route element={<DevRegister setDevId={setDevId} />} path="/" default />
+        <Route element={<Languages devId={devId} />} path="/devs/skills/languages" />
+        <Route element={<Frameworks devId={devId} />} path="/devs/skills/frameworks/:id" />
+        <Route element={<DevLogin />} path="/devs/login" />
+        <Route element={<AvailabeJobs />} path="/devs/jobs" />
         <Route path='/orgs/Register' element={<Register />} />
         <Route path='/orgs/Dashboard' element={<Dashboard />} />
         <Route path='/orgs/Login' element={<Login />} />
-        <Route path='/orgs/jobs/new' element={<Newposiotion/> } />
+        <Route path='/orgs/jobs/new' element={<Newposiotion />} />
         <Route path="/orgs/jobs/:positionId" element={<PositionDetails />} />
 
 
